@@ -1,7 +1,7 @@
 {
   "public": true,
   "github": { "silent": true },
-  "rewrites": [
+  "redirects": [
     { "source": "/new", "destination": "https://airtable.com/shrldLgPMyuAKWKvc" }
   ]
 }
