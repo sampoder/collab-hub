@@ -58,7 +58,7 @@ export default function Home(props) {
             columnClassName="masonry-posts-column"
           >
             {props.posts.map((event) => (
-              <Card shadow key={event.id} style={{ marginBottom: "24px" }}>
+              <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
                 {event.file[0].type.includes("image") && (
                   <Image src={event.file[0].url} height="100%" />
                 )}
@@ -120,7 +120,7 @@ export default function Home(props) {
             {props.posts
               .filter((event) => event.type.includes("Visual Arts"))
               .map((event) => (
-                <Card shadow key={event.id} style={{ marginBottom: "24px" }}>
+                <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
                   {event.file[0].type.includes("image") && (
                     <Image src={event.file[0].url} height="100%" />
                   )}
@@ -182,7 +182,7 @@ export default function Home(props) {
             {props.posts
               .filter((event) => event.type.includes("Photography"))
               .map((event) => (
-                <Card shadow key={event.id} style={{ marginBottom: "24px" }}>
+                <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
                   {event.file[0].type.includes("image") && (
                     <Image src={event.file[0].url} height="100%" />
                   )}
@@ -244,7 +244,7 @@ export default function Home(props) {
             {props.posts
               .filter((event) => event.type.includes("Performances"))
               .map((event) => (
-                <Card shadow key={event.id} style={{ marginBottom: "24px" }}>
+                <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
                   {event.file[0].type.includes("image") && (
                     <Image src={event.file[0].url} height="100%" />
                   )}
@@ -253,11 +253,11 @@ export default function Home(props) {
                       width="100%"
                       height="100%"
                       style={{
-                        marginTop: "-16pt",
-                        marginRight: "-16pt",
-                        marginLeft: "-16pt",
+                        marginTop: "calc(-16pt - 1px)",
+                        marginRight: "calc(-16pt - 1px)",
+                        marginLeft: "calc(-16pt - 1px)",
                         objectFit: "cover",
-                        width: "calc(100% + 32pt)",
+                        width: "calc(100% + 34pt)",
                         borderRadius: "5px 5px 0px 0px",
                       }}
                       controls
