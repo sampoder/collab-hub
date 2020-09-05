@@ -20,10 +20,12 @@ import Masonry from "react-masonry-css";
 
 import fetch from "isomorphic-unfetch";
 import { orderBy } from "lodash";
+import Meta from 'components/meta.js'
 
 export default function Home(props) {
   return (
     <Page>
+      <Metz />
       <Head>
         <title>Arts Week Collaboration Hub</title>
         <link rel="icon" href="/favicon.ico" />
