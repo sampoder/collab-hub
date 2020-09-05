@@ -38,7 +38,12 @@ export default function Home(props) {
             virtually. Here you can share your artwork with the entire school as
             well as share remixes of works done by your peers at school.
           </Text>
-          <Link href="https://airtable.com/shrldLgPMyuAKWKvc" icon color style={{ marginBottom: "20px" }}>
+          <Link
+            href="https://airtable.com/shrldLgPMyuAKWKvc"
+            icon
+            color
+            style={{ marginBottom: "20px" }}
+          >
             Submit to the hub
           </Link>
           <Masonry
@@ -75,16 +80,24 @@ export default function Home(props) {
                   </video>
                 )}
                 <p>
-                  <h4 style={{ display: "inline" }}>{event.title}</h4> by Samuel
-                  P
+                  <h4 style={{ display: "inline" }}>{event.title}</h4> by{" "}
+                  {event.creator}
                   <br />
-                  <small style={{ fontStyle: "italic" }}>
-                    remixed from Samuel P's Home Land Painting Home
-                  </small>
+                  {event.remixCreator != "" && (
+                      <><hr />
+                      <small style={{ fontStyle: "italic" }}>
+                        remixed from {event.remixCreator}'s{" "}
+                        {event.remixPieceName}
+                      </small></>
+                    )}
                 </p>
-                <Tag style={{ display: "inline", marginRight: "6px" }}>
-                  ↻ Remix me
-                </Tag>
+                <a
+                  href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
+                >
+                  <Tag style={{ display: "inline", marginRight: "6px" }}>
+                    ↻ Remix me
+                  </Tag>
+                </a>
               </Card>
             ))}
           </Masonry>
@@ -129,16 +142,24 @@ export default function Home(props) {
                     </video>
                   )}
                   <p>
-                    <h4 style={{ display: "inline" }}>{event.title}</h4> by
-                    Samuel P
+                    <h4 style={{ display: "inline" }}>{event.title}</h4> by{" "}
+                    {event.creator}
                     <br />
-                    <small style={{ fontStyle: "italic" }}>
-                      remixed from Samuel P's Home Land Painting Home
-                    </small>
+                    {event.remixCreator != "" && (
+                      <><hr />
+                      <small style={{ fontStyle: "italic" }}>
+                        remixed from {event.remixCreator}'s{" "}
+                        {event.remixPieceName}
+                      </small></>
+                    )}
                   </p>
-                  <Tag style={{ display: "inline", marginRight: "6px" }}>
-                    ↻ Remix me
-                  </Tag>
+                  <a
+                    href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
+                  >
+                    <Tag style={{ display: "inline", marginRight: "6px" }}>
+                      ↻ Remix me
+                    </Tag>
+                  </a>
                 </Card>
               ))}
           </Masonry>
@@ -183,16 +204,24 @@ export default function Home(props) {
                     </video>
                   )}
                   <p>
-                    <h4 style={{ display: "inline" }}>{event.title}</h4> by
-                    Samuel P
+                    <h4 style={{ display: "inline" }}>{event.title}</h4> by{" "}
+                    {event.creator}
                     <br />
-                    <small style={{ fontStyle: "italic" }}>
-                      remixed from Samuel P's Home Land Painting Home
-                    </small>
+                    {event.remixCreator != "" && (
+                      <><hr />
+                      <small style={{ fontStyle: "italic" }}>
+                        remixed from {event.remixCreator}'s{" "}
+                        {event.remixPieceName}
+                      </small></>
+                    )}
                   </p>
-                  <Tag style={{ display: "inline", marginRight: "6px" }}>
-                    ↻ Remix me
-                  </Tag>
+                  <a
+                    href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
+                  >
+                    <Tag style={{ display: "inline", marginRight: "6px" }}>
+                      ↻ Remix me
+                    </Tag>
+                  </a>
                 </Card>
               ))}
           </Masonry>
@@ -237,16 +266,24 @@ export default function Home(props) {
                     </video>
                   )}
                   <p>
-                    <h4 style={{ display: "inline" }}>{event.title}</h4> by
-                    Samuel P
+                    <h4 style={{ display: "inline" }}>{event.title}</h4> by{" "}
+                    {event.creator}
                     <br />
-                    <small style={{ fontStyle: "italic" }}>
-                      remixed from Samuel P's Home Land Painting Home
-                    </small>
+                    {event.remixCreator != "" && (
+                      <><hr />
+                      <small style={{ fontStyle: "italic" }}>
+                        remixed from {event.remixCreator}'s{" "}
+                        {event.remixPieceName}
+                      </small></>
+                    )}
                   </p>
-                  <Tag style={{ display: "inline", marginRight: "6px" }}>
-                    ↻ Remix me
-                  </Tag>
+                  <a
+                    href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
+                  >
+                    <Tag style={{ display: "inline", marginRight: "6px" }}>
+                      ↻ Remix me
+                    </Tag>
+                  </a>
                 </Card>
               ))}
           </Masonry>
@@ -313,16 +350,22 @@ export default function Home(props) {
 
 export const getServerSideProps = async () => {
   const posts = await fetch(
-    "https://sampoder-api.herokuapp.com/v0.1/Arts%20Week%20Collab%20Hub/Posts?select=filterByFormula:'{Verified?}==true',"
+    'https://sampoder-api.herokuapp.com/v0.1/Arts%20Week%20Collab%20Hub/Posts?select={"filterByFormula":"{Verified?}=1"}'
   )
     .then((r) => r.json())
     .then((posts) =>
       posts.map(({ id, fields }) => ({
-        id: fields["ID"],
+        id,
         title: fields["Name of Piece"],
         file: fields["Image"],
         creator: fields["Creator"],
         type: fields["Type"],
+        remixCreator: fields["Creator (from Remix of:)"]
+          ? fields["Creator (from Remix of:)"]
+          : "",
+        remixPieceName: fields["Name of Piece (from Remix of:)"]
+          ? fields["Name of Piece (from Remix of:)"]
+          : "",
       }))
     )
     .then((posts) => orderBy(posts, "title"));
