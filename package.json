@@ -9,9 +9,12 @@
   },
   "dependencies": {
     "@geist-ui/react": "^2.0.2",
+    "@geist-ui/react-icons": "^1.0.0",
     "isomorphic-unfetch": "^3.0.0",
     "next": "9.5.3",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-masonry-component": "^6.2.1",
+    "react-masonry-css": "^1.0.14"
   }
 }
