@@ -20,7 +20,7 @@ import Masonry from "react-masonry-css";
 
 import fetch from "isomorphic-unfetch";
 import { orderBy } from "lodash";
-import Meta from '../components/meta.js'
+import Meta from "../components/meta.js";
 
 export default function Home(props) {
   return (
@@ -60,7 +60,14 @@ export default function Home(props) {
             columnClassName="masonry-posts-column"
           >
             {props.posts.map((event) => (
-              <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
+              <Card
+                shadow
+                key={event.id}
+                style={{
+                  marginBottom: "24px",
+                  border: "0px solid transparent",
+                }}
+              >
                 {event.file[0].type.includes("image") && (
                   <Image src={event.file[0].url} height="100%" />
                 )}
@@ -86,12 +93,14 @@ export default function Home(props) {
                   {event.creator}
                   <br />
                   {event.remixCreator != "" && (
-                      <><hr />
+                    <>
+                      <hr />
                       <small style={{ fontStyle: "italic" }}>
                         remixed from {event.remixCreator}'s{" "}
                         {event.remixPieceName}
-                      </small></>
-                    )}
+                      </small>
+                    </>
+                  )}
                 </p>
                 <a
                   href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
@@ -122,7 +131,14 @@ export default function Home(props) {
             {props.posts
               .filter((event) => event.type.includes("Visual Arts"))
               .map((event) => (
-                <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
+                <Card
+                  shadow
+                  key={event.id}
+                  style={{
+                    marginBottom: "24px",
+                    border: "0px solid transparent",
+                  }}
+                >
                   {event.file[0].type.includes("image") && (
                     <Image src={event.file[0].url} height="100%" />
                   )}
@@ -148,11 +164,13 @@ export default function Home(props) {
                     {event.creator}
                     <br />
                     {event.remixCreator != "" && (
-                      <><hr />
-                      <small style={{ fontStyle: "italic" }}>
-                        remixed from {event.remixCreator}'s{" "}
-                        {event.remixPieceName}
-                      </small></>
+                      <>
+                        <hr />
+                        <small style={{ fontStyle: "italic" }}>
+                          remixed from {event.remixCreator}'s{" "}
+                          {event.remixPieceName}
+                        </small>
+                      </>
                     )}
                   </p>
                   <a
@@ -184,7 +202,14 @@ export default function Home(props) {
             {props.posts
               .filter((event) => event.type.includes("Photography"))
               .map((event) => (
-                <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
+                <Card
+                  shadow
+                  key={event.id}
+                  style={{
+                    marginBottom: "24px",
+                    border: "0px solid transparent",
+                  }}
+                >
                   {event.file[0].type.includes("image") && (
                     <Image src={event.file[0].url} height="100%" />
                   )}
@@ -210,11 +235,13 @@ export default function Home(props) {
                     {event.creator}
                     <br />
                     {event.remixCreator != "" && (
-                      <><hr />
-                      <small style={{ fontStyle: "italic" }}>
-                        remixed from {event.remixCreator}'s{" "}
-                        {event.remixPieceName}
-                      </small></>
+                      <>
+                        <hr />
+                        <small style={{ fontStyle: "italic" }}>
+                          remixed from {event.remixCreator}'s{" "}
+                          {event.remixPieceName}
+                        </small>
+                      </>
                     )}
                   </p>
                   <a
@@ -246,7 +273,14 @@ export default function Home(props) {
             {props.posts
               .filter((event) => event.type.includes("Performances"))
               .map((event) => (
-                <Card shadow key={event.id} style={{ marginBottom: "24px", border: '0px solid transparent' }}>
+                <Card
+                  shadow
+                  key={event.id}
+                  style={{
+                    marginBottom: "24px",
+                    border: "0px solid transparent",
+                  }}
+                >
                   {event.file[0].type.includes("image") && (
                     <Image src={event.file[0].url} height="100%" />
                   )}
@@ -272,11 +306,13 @@ export default function Home(props) {
                     {event.creator}
                     <br />
                     {event.remixCreator != "" && (
-                      <><hr />
-                      <small style={{ fontStyle: "italic" }}>
-                        remixed from {event.remixCreator}'s{" "}
-                        {event.remixPieceName}
-                      </small></>
+                      <>
+                        <hr />
+                        <small style={{ fontStyle: "italic" }}>
+                          remixed from {event.remixCreator}'s{" "}
+                          {event.remixPieceName}
+                        </small>
+                      </>
                     )}
                   </p>
                   <a
