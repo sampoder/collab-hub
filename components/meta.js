@@ -6,8 +6,8 @@ export default ({
   description = `Pulled apart by COVID-19, let's come together to collaborate on art virtually. 
   Here you can share your artwork with the entire school 
   as well as share remixes of works done by your peers at school.`,
-  image = "https://cloud-eal030yrr.vercel.app/collaboration_hub.png",
-  url = "https://gwas-arts-week-collab-hub.vercel.app",
+  image = "https://cloud-8r7qf7pou.vercel.app/collaboration_hub-2.png",
+  url = "https://collab-hub.vercel.app",
 }) => (
   <Head>
     <title>{title}</title>

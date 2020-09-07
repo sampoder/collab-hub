@@ -382,6 +382,11 @@ export default function Home(props) {
           }
         }
       `}</style>
+      <style jsx global key="masonry-style">{`
+        a{
+          color: #EC5454!important
+        }
+      `}</style>
     </Page>
   );
 }
