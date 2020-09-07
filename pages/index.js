@@ -255,9 +255,9 @@ export default function Home(props) {
               ))}
           </Masonry>
         </Tabs.Item>
-        <Tabs.Item label="Performances" value="4">
+        <Tabs.Item label="Music" value="4">
           <Text h1 style={{ textAlign: "left" }}>
-            All of the <a>Performance</a> Posts
+            All of the <a>Musical</a> Posts
           </Text>
           <Masonry
             key="masonry"
@@ -271,7 +271,149 @@ export default function Home(props) {
             columnClassName="masonry-posts-column"
           >
             {props.posts
-              .filter((event) => event.type.includes("Performances"))
+              .filter((event) => event.type.includes("Musical"))
+              .map((event) => (
+                <Card
+                  shadow
+                  key={event.id}
+                  style={{
+                    marginBottom: "24px",
+                    border: "0px solid transparent",
+                  }}
+                >
+                  {event.file[0].type.includes("image") && (
+                    <Image src={event.file[0].url} height="100%" />
+                  )}
+                  {event.file[0].type.includes("video") && (
+                    <video
+                      width="100%"
+                      height="100%"
+                      style={{
+                        marginTop: "calc(-16pt - 1px)",
+                        marginRight: "calc(-16pt - 1px)",
+                        marginLeft: "calc(-16pt - 1px)",
+                        objectFit: "cover",
+                        width: "calc(100% + 34pt)",
+                        borderRadius: "5px 5px 0px 0px",
+                      }}
+                      controls
+                    >
+                      <source src={event.file[0].url} />
+                    </video>
+                  )}
+                  <p>
+                    <h4 style={{ display: "inline" }}>{event.title}</h4> by{" "}
+                    {event.creator}
+                    <br />
+                    {event.remixCreator != "" && (
+                      <>
+                        <hr />
+                        <small style={{ fontStyle: "italic" }}>
+                          remixed from {event.remixCreator}'s{" "}
+                          {event.remixPieceName}
+                        </small>
+                      </>
+                    )}
+                  </p>
+                  <a
+                    href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
+                  >
+                    <Tag style={{ display: "inline", marginRight: "6px" }}>
+                      ↻ Remix me
+                    </Tag>
+                  </a>
+                </Card>
+              ))}
+          </Masonry>
+        </Tabs.Item>
+        <Tabs.Item label="Drama" value="5">
+          <Text h1 style={{ textAlign: "left" }}>
+            All of the <a>Dramatic</a> Posts
+          </Text>
+          <Masonry
+            key="masonry"
+            breakpointCols={{
+              default: 3,
+              1024: 3,
+              640: 2,
+              480: 1,
+            }}
+            className="masonry-posts"
+            columnClassName="masonry-posts-column"
+          >
+            {props.posts
+              .filter((event) => event.type.includes("Dramatic"))
+              .map((event) => (
+                <Card
+                  shadow
+                  key={event.id}
+                  style={{
+                    marginBottom: "24px",
+                    border: "0px solid transparent",
+                  }}
+                >
+                  {event.file[0].type.includes("image") && (
+                    <Image src={event.file[0].url} height="100%" />
+                  )}
+                  {event.file[0].type.includes("video") && (
+                    <video
+                      width="100%"
+                      height="100%"
+                      style={{
+                        marginTop: "calc(-16pt - 1px)",
+                        marginRight: "calc(-16pt - 1px)",
+                        marginLeft: "calc(-16pt - 1px)",
+                        objectFit: "cover",
+                        width: "calc(100% + 34pt)",
+                        borderRadius: "5px 5px 0px 0px",
+                      }}
+                      controls
+                    >
+                      <source src={event.file[0].url} />
+                    </video>
+                  )}
+                  <p>
+                    <h4 style={{ display: "inline" }}>{event.title}</h4> by{" "}
+                    {event.creator}
+                    <br />
+                    {event.remixCreator != "" && (
+                      <>
+                        <hr />
+                        <small style={{ fontStyle: "italic" }}>
+                          remixed from {event.remixCreator}'s{" "}
+                          {event.remixPieceName}
+                        </small>
+                      </>
+                    )}
+                  </p>
+                  <a
+                    href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
+                  >
+                    <Tag style={{ display: "inline", marginRight: "6px" }}>
+                      ↻ Remix me
+                    </Tag>
+                  </a>
+                </Card>
+              ))}
+          </Masonry>
+        </Tabs.Item>
+      <Tabs.Item label="Writing" value="6">
+          <Text h1 style={{ textAlign: "left" }}>
+            All of the <a>Creative Writing</a> Posts
+          </Text>
+          <Masonry
+            key="masonry"
+            breakpointCols={{
+              default: 3,
+              1024: 3,
+              640: 2,
+              480: 1,
+            }}
+            className="masonry-posts"
+            columnClassName="masonry-posts-column"
+          >
+            {props.posts
+              .filter((event) => event.type.includes("Creative Writing"))
               .map((event) => (
                 <Card
                   shadow
