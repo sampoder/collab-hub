@@ -12,6 +12,8 @@ import {
   file,
   Divider,
   Spacer,
+  Modal,
+  useModal,
   Tabs,
   Grid,
 } from "@geist-ui/react";
@@ -23,6 +25,7 @@ import { orderBy } from "lodash";
 import Meta from "../components/meta.js";
 
 export default function Home(props) {
+  const { visible, setVisible, bindings } = useModal();
   return (
     <Page>
       <Meta />
@@ -42,12 +45,32 @@ export default function Home(props) {
           </Text>
           <Link
             href="https://airtable.com/shrldLgPMyuAKWKvc"
-            icon
             color
-            style={{ marginBottom: "20px" }}
+            style={{ marginBottom: "20px", marginRight: "10px" }}
           >
-            Submit to the hub
+            <Button auto>Submit to the hub</Button>
           </Link>
+
+          <Button auto onClick={() => setVisible(true)}>
+            Learn more
+          </Button>
+          <Modal {...bindings}>
+            <Modal.Title>Learn more</Modal.Title>
+            <Modal.Content style={{ textAlign: "center" }}>
+              <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
+                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
+                enim ad minim veniam, quis nostrud exercitation ullamco laboris
+                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
+                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
+                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
+                sunt in culpa qui officia deserunt mollit anim id est laborum.
+              </p>
+            </Modal.Content>
+            <Modal.Action passive onClick={() => setVisible(false)}>
+              Close
+            </Modal.Action>
+          </Modal>
           <Masonry
             key="masonry"
             breakpointCols={{
@@ -397,7 +420,7 @@ export default function Home(props) {
               ))}
           </Masonry>
         </Tabs.Item>
-      <Tabs.Item label="Writing" value="6">
+        <Tabs.Item label="Writing" value="6">
           <Text h1 style={{ textAlign: "left" }}>
             All of the <a>Creative Writing</a> Posts
           </Text>
@@ -414,6 +437,77 @@ export default function Home(props) {
           >
             {props.posts
               .filter((event) => event.type.includes("Creative Writing"))
+              .map((event) => (
+                <Card
+                  shadow
+                  key={event.id}
+                  style={{
+                    marginBottom: "24px",
+                    border: "0px solid transparent",
+                  }}
+                >
+                  {event.file[0].type.includes("image") && (
+                    <Image src={event.file[0].url} height="100%" />
+                  )}
+                  {event.file[0].type.includes("video") && (
+                    <video
+                      width="100%"
+                      height="100%"
+                      style={{
+                        marginTop: "calc(-16pt - 1px)",
+                        marginRight: "calc(-16pt - 1px)",
+                        marginLeft: "calc(-16pt - 1px)",
+                        objectFit: "cover",
+                        width: "calc(100% + 34pt)",
+                        borderRadius: "5px 5px 0px 0px",
+                      }}
+                      controls
+                    >
+                      <source src={event.file[0].url} />
+                    </video>
+                  )}
+                  <p>
+                    <h4 style={{ display: "inline" }}>{event.title}</h4> by{" "}
+                    {event.creator}
+                    <br />
+                    {event.remixCreator != "" && (
+                      <>
+                        <hr />
+                        <small style={{ fontStyle: "italic" }}>
+                          remixed from {event.remixCreator}'s{" "}
+                          {event.remixPieceName}
+                        </small>
+                      </>
+                    )}
+                  </p>
+                  <a
+                    href={`https://airtable.com/shrasbn5IUeiSkjFI?prefill_You%20are%20submitting%20a%20remix%20of=${event.id}`}
+                  >
+                    <Tag style={{ display: "inline", marginRight: "6px" }}>
+                      ↻ Remix me
+                    </Tag>
+                  </a>
+                </Card>
+              ))}
+          </Masonry>
+        </Tabs.Item>
+        <Tabs.Item label="Dance" value="7">
+          <Text h1 style={{ textAlign: "left" }}>
+            All of the <a>Dancing</a> Posts
+          </Text>
+          <Masonry
+            key="masonry"
+            breakpointCols={{
+              default: 3,
+              1024: 3,
+              640: 2,
+              480: 1,
+            }}
+            className="masonry-posts"
+            columnClassName="masonry-posts-column"
+          >
+            {props.posts
+              .filter((event) => event.type.includes("Dance"))
               .map((event) => (
                 <Card
                   shadow
@@ -525,8 +619,8 @@ export default function Home(props) {
         }
       `}</style>
       <style jsx global key="masonry-style">{`
-        a{
-          color: #EC5454!important
+        a {
+          color: #ec5454 !important;
         }
       `}</style>
     </Page>
