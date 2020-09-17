@@ -164,7 +164,7 @@ export default function Home(props) {
                 <li>Film and music video for it.</li>
                 <li>Create a digital design for the background.</li>
               </ul>
-              <p>The options are endless...what can YOU do?</p>
+              <p style={{ fontWeight: '600' }}>The options are endless...what can YOU do?</p>
             </Modal.Content>
             <Modal.Action passive onClick={() => setVisible(false)}>
               Close
