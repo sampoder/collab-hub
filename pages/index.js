@@ -52,20 +52,119 @@ export default function Home(props) {
           </Link>
 
           <Button auto onClick={() => setVisible(true)}>
-            Learn more
+            How it works
           </Button>
-          <Modal {...bindings}>
-            <Modal.Title>Learn more</Modal.Title>
-            <Modal.Content style={{ textAlign: "center" }}>
+          <Modal width="750pt" style={{ paddingTop: "-16pt" }} {...bindings}>
+            <Modal.Content>
+              <Modal.Action
+                passive
+                onClick={() => setVisible(false)}
+                style={{
+                  display: "inline-block",
+                  padding: "0pt",
+                  marginBottom: "-16pt",
+                }}
+              >
+                Close
+              </Modal.Action>
+              <h1
+                style={{
+                  textAlign: "left",
+                  width: "100%",
+                  fontSize: "3em",
+                  fontWeight: "800",
+                }}
+              >
+                Be Creative. Together.
+              </h1>
+              <h2 style={{ fontSize: "1.5em", fontWeight: "600" }}>
+                Find collaborators. Finish projects. Or start your own…
+              </h2>
               <p>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut
-                enim ad minim veniam, quis nostrud exercitation ullamco laboris
-                nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor
-                in reprehenderit in voluptate velit esse cillum dolore eu fugiat
-                nulla pariatur. Excepteur sint occaecat cupidatat non proident,
-                sunt in culpa qui officia deserunt mollit anim id est laborum.
+                On COLLABORATION HUB, people don’t just post their own stuff --
+                we make things together. Whether you’re a beginner or an expert,
+                whether you’re into writing, film, music, or any other kind of
+                art, you’ll find this platform a welcoming and positive place to
+                be your creative self.
               </p>
+              <h2 style={{ fontSize: "1.5em", fontWeight: "600" }}>
+                How it works
+              </h2>
+              <p>
+                The COLLABORATION HUB is a new, interactive, sharing platform
+                that allows students to be inspired by the work of others; REMIX
+                and generate their own work; and share it on the HUB for others
+                to be inspired further.
+              </p>
+              <p>
+                This is an ARTS WEEK launch where everyone from artists,
+                musicians, actors, singers, and dancers, to designers, editors,
+                photographers, writers and coders can have a go. Just scroll
+                through the samples in the gallery and remix it to make
+                something (anything!) new from it.
+              </p>
+              <p>TIMELINE:</p>
+              <p>
+                The ARTS WEEK challenge will end on Friday 25 September the best
+                collaborative creations will be shared in an assembly showcase
+                and social media.
+              </p>
+              <p>
+                Make sure you check emails and Google Currents for updates and
+                ideas. We'll be featuring awesome contributions and REMIXES as
+                we receive them and post them on this site, so make sure to
+                check back to see what’s new.
+              </p>
+              <p>Happy COLLABORATING and REMIXING!</p>
+              <h2 style={{ fontSize: "1.5em", fontWeight: "600" }}>
+                What can you do?
+              </h2>
+              <ol>
+                <li>
+                  Explore the gallery of work shared on the homepage
+                  (Everything) or under the different section tabs above (Visual
+                  Arts, Photography, Music, Drama, Writing, Dance).
+                </li>
+                <li>
+                  Choose something that inspires you and MAKE SOMETHING NEW!
+                </li>
+                <li>Click the REMIX button and submit your creation.</li>
+              </ol>
+              <p>It's that easy!</p>
+              <p>See an image you like (painting, photograph)? You could…</p>
+              <ul>
+                <li>Write a song about it.</li>
+                <li>Perform a dance inspired by it.</li>
+                <li>Do a pencil sketch version of it.</li>
+              </ul>
+              <p>
+                See a performance video that interests you (drama, dance)? You
+                could…
+              </p>
+              <ul>
+                <li>Compose a soundtrack/sound effects track for it.</li>
+                <li>Record a voice over for the actors.</li>
+                <li>Design costumes for the performers.</li>
+              </ul>
+              <p>
+                See some cryptic CODE sequence for a piece of music? You could…
+              </p>
+              <ul>
+                <li>Code your own version/remix of it.</li>
+                <li>Code an accompanying track to go with it.</li>
+                <li>Perform a dance to the sound.</li>
+                <li>Create a digital design for the background.</li>
+              </ul>
+              <p>Hear music you like?? You could…</p>
+              <ul>
+                <li>
+                  Act out a scene/monologue using it as your background music.
+                </li>
+                <li>Compose another instrument to go with it.</li>
+                <li>Film and music video for it.</li>
+                <li>Create a digital design for the background.</li>
+              </ul>
+              <p>The options are endless...what can YOU do?</p>
             </Modal.Content>
             <Modal.Action passive onClick={() => setVisible(false)}>
               Close
