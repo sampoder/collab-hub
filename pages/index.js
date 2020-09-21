@@ -239,6 +239,17 @@ export default function Home(props) {
           <Text h1 style={{ textAlign: "left" }}>
             All of the <a>Visual Arts</a> Posts
           </Text>
+          <Link
+            href="https://airtable.com/shrldLgPMyuAKWKvc"
+            color
+            style={{ marginBottom: "20px", marginRight: "10px" }}
+          >
+            <Button auto>Submit to the hub</Button>
+          </Link>
+
+          <Button auto onClick={() => setVisible(true)}>
+            How it works
+          </Button>
           <Masonry
             key="masonry"
             breakpointCols={{
@@ -310,6 +321,17 @@ export default function Home(props) {
           <Text h1 style={{ textAlign: "left" }}>
             All of the <a>Photography</a> Posts
           </Text>
+          <Link
+            href="https://airtable.com/shrldLgPMyuAKWKvc"
+            color
+            style={{ marginBottom: "20px", marginRight: "10px" }}
+          >
+            <Button auto>Submit to the hub</Button>
+          </Link>
+
+          <Button auto onClick={() => setVisible(true)}>
+            How it works
+          </Button>
           <Masonry
             key="masonry"
             breakpointCols={{
@@ -381,6 +403,17 @@ export default function Home(props) {
           <Text h1 style={{ textAlign: "left" }}>
             All of the <a>Musical</a> Posts
           </Text>
+          <Link
+            href="https://airtable.com/shrldLgPMyuAKWKvc"
+            color
+            style={{ marginBottom: "20px", marginRight: "10px" }}
+          >
+            <Button auto>Submit to the hub</Button>
+          </Link>
+
+          <Button auto onClick={() => setVisible(true)}>
+            How it works
+          </Button>
           <Masonry
             key="masonry"
             breakpointCols={{
@@ -452,6 +485,17 @@ export default function Home(props) {
           <Text h1 style={{ textAlign: "left" }}>
             All of the <a>Dramatic</a> Posts
           </Text>
+          <Link
+            href="https://airtable.com/shrldLgPMyuAKWKvc"
+            color
+            style={{ marginBottom: "20px", marginRight: "10px" }}
+          >
+            <Button auto>Submit to the hub</Button>
+          </Link>
+
+          <Button auto onClick={() => setVisible(true)}>
+            How it works
+          </Button>
           <Masonry
             key="masonry"
             breakpointCols={{
@@ -523,6 +567,17 @@ export default function Home(props) {
           <Text h1 style={{ textAlign: "left" }}>
             All of the <a>Creative Writing</a> Posts
           </Text>
+          <Link
+            href="https://airtable.com/shrldLgPMyuAKWKvc"
+            color
+            style={{ marginBottom: "20px", marginRight: "10px" }}
+          >
+            <Button auto>Submit to the hub</Button>
+          </Link>
+
+          <Button auto onClick={() => setVisible(true)}>
+            How it works
+          </Button>
           <Masonry
             key="masonry"
             breakpointCols={{
@@ -594,6 +649,17 @@ export default function Home(props) {
           <Text h1 style={{ textAlign: "left" }}>
             All of the <a>Dancing</a> Posts
           </Text>
+          <Link
+            href="https://airtable.com/shrldLgPMyuAKWKvc"
+            color
+            style={{ marginBottom: "20px", marginRight: "10px" }}
+          >
+            <Button auto>Submit to the hub</Button>
+          </Link>
+
+          <Button auto onClick={() => setVisible(true)}>
+            How it works
+          </Button>
           <Masonry
             key="masonry"
             breakpointCols={{
