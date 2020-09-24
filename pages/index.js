@@ -149,7 +149,7 @@ export default function Home(props) {
           <Text h1 style={{ textAlign: "left", marginBottom: '0px' }}>
             Welcome to the <a>Collaboration Hub!</a>
           </Text>
-          <Text p style={{ textAlign: "left", maxWidth: "600px" }}>
+          <Text p style={{ textAlign: "left", marginTop: '0px', maxWidth: "600px" }}>
             Pulled apart by COVID-19, let's come together to collaborate on art
             virtually. Here you can share your artwork with the entire school as
             well as share remixes of works done by your peers at school.
