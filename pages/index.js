@@ -146,7 +146,7 @@ export default function Home(props) {
       </Modal>
       <Tabs initialValue="1">
         <Tabs.Item label="Everything" value="1">
-          <Text h1 style={{ textAlign: "left" }}>
+          <Text h1 style={{ textAlign: "left", marginBottom: '0px' }}>
             Welcome to the <a>Collaboration Hub!</a>
           </Text>
           <Text p style={{ textAlign: "left", maxWidth: "600px" }}>
