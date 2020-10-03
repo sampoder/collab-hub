@@ -1,7 +1,7 @@
 {
   "public": true,
   "github": { "silent": true },
-  "redirects": [
+  "rewrites": [
     { "source": "/new", "destination": "https://scrapbook.hackclub.com/sampoder/" }
   ]
 }
