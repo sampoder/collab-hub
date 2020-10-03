@@ -2,6 +2,6 @@
   "public": true,
   "github": { "silent": true },
   "redirects": [
-    { "source": "/new", "destination": "https://airtable.com/shrldLgPMyuAKWKvc" }
+    { "source": "/new", "destination": "https://scrapbook.hackclub.com/sampoder/" }
   ]
 }
